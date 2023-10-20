@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: "edgaregonzalez/nodejs-example"
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "v1.0.3"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -41,7 +41,8 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 80
+  port: 8080
+  targetPort: 8080
 
 ingress:
   enabled: false
@@ -96,3 +97,18 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+secretMessage: 
+  create: true
+  message: "Hello World!"
+
+persistentVolume: 
+  enabled: true
+  size: 10Gi
+  accessModes: "ReadWriteOnce"
+  storageClass: ""
+
+persistentVolumeClaim:
+  enabled: true
+  accessModes: "ReadWriteOnce"
+  size: 10Gi
+  storageClass: ""
