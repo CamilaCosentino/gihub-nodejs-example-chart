@@ -41,7 +41,7 @@ spec:
           - name: MENSAJE
             valueFrom:
               secretKeyRef:
-                name: message-secret
+                name: {{ include "helm-chart.fullname" . }}-secret
                 key: MENSAJE
           volumeMounts:
           - name: nodejs-example-volume
@@ -68,9 +68,7 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      {{- if .Values.persistentVolumeClaim.enabled}}
       volumes:
       - name: nodejs-example-volume
         persistentVolumeClaim:
           claimName: {{ include "helm-chart.fullname" . }}-pvc
-      {{- end}}
