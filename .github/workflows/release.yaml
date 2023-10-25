@@ -3,7 +3,7 @@ name: Package and Publish Helm Chart
 on:
   push:
     branches:
-      - branch_ezequiel  # Cambia esto al nombre de tu rama principal
+      - master  # Cambia esto al nombre de tu rama principal
 
 jobs:
   release:
