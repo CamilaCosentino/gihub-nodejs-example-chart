@@ -8,7 +8,7 @@ spec:
   source:
     chart: nodejs-example-chart
     repoURL: https://camilacosentino.github.io/nodejs-example-chart/
-    targetRevision: 0.1.4
+    targetRevision: 0.1.5
     helm:
       releaseName: nodejs-app
   destination:
