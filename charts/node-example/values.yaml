@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: camila232dmnfdn2i/nodeapp_mongodb
+  repository: edgaregonzalez/nodejs-example
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0.0"
+  tag: "20231018205529-build7"
 
 imagePullSecrets: []
 nameOverride: ""
